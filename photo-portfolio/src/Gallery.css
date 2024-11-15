@@ -1,0 +1,258 @@
+/* src/components/Gallery.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --bg-color: #f4f5f7; /* Light neutral background */
+    --text-color: #2d2d2d; /* Dark text for readability */
+    --primary-color: #1f3a64; /* Deep navy blue */
+    --secondary-color: #f1a83f; /* Soft gold accent */
+    --border-color: #d1d6db; /* Light grey border */
+    --box-shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.dark-mode {
+    --bg-color: #2e2e2e; /* Dark mode background */
+    --text-color: #e0e0e0; /* Lighter text for dark mode */
+    --primary-color: #536dfe; /* Lighter blue for contrast */
+    --secondary-color: #ffca28; /* Bright gold accent for dark mode */
+    --border-color: #555; /* Darker border for dark mode */
+    --box-shadow-color: rgba(0, 0, 0, 0.3); /* Stronger shadow for dark mode */
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--secondary-color);
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    border-radius: 12px;
+    transition: box-shadow 0.3s;
+}
+
+.gallery-section {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s;
+}
+
+.gallery-section:last-child {
+    border-bottom: none;
+}
+
+.gallery-section h2 {
+    font-size: 2.5em;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.image-gallery-content {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.image-gallery-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 600px;
+    border-radius: 20px;  /* Increased border-radius for rounder edges */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-gallery-content img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px var(--box-shadow-color);
+}
+
+.image-gallery-content h3 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+
+.image-gallery-content p {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.image-gallery-thumbnail {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+
+.image-gallery-thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px var(--box-shadow-color);
+}
+
+/* Fullscreen mode styles (only when fullscreen is active) */
+.image-gallery-slide-wrapper.fullscreen {
+    background-color: rgba(0, 0, 0, 0.9); /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* No extra padding */
+}
+
+/* Hide thumbnails when fullscreen mode is active */
+.image-gallery-thumbnails-wrapper {
+    display: none;
+}
+
+/* Fullscreen mode image resizing */
+.image-gallery-fullscreen .image-gallery-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure image is contained within the viewport */
+    margin: 0 auto;
+}
+
+/* Ensure that the image gallery's thumbnail is hidden in fullscreen */
+.image-gallery-thumbnail {
+    display: none; /* Hide the thumbnail in fullscreen mode */
+}
+
+/* Additional styling for navigation buttons */
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+    font-size: 3em;  /* Increased button size */
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.image-gallery-left-nav:hover, 
+.image-gallery-right-nav:hover {
+    color: var(--secondary-color);
+}
+
+/* Thumbnail navigation */
+.image-gallery-thumbnails-wrapper {
+    display: flex;           /* Display items in a row */
+    flex-wrap: nowrap;       /* Prevent wrapping */
+    gap: 15px;               /* Increased space between thumbnails */
+    overflow-x: auto;        /* Enable horizontal scrolling if needed */
+    padding: 10px 0;
+    justify-content: center; /* Center thumbnails in the row */
+}
+
+.image-gallery-thumbnails-wrapper::-webkit-scrollbar {
+    height: 6px;             /* Thumbnails horizontal scrollbar */
+}
+
+.image-gallery-thumbnails-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+/* Ensure that individual thumbnail images maintain a consistent size */
+.image-gallery-thumbnail img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 15px;  /* Slightly rounded edges for thumbnails */
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+
+/* Thumbnail hover effect */
+.image-gallery-thumbnail:hover img {
+    transform: scale(1.1);    /* Increase size on hover */
+    box-shadow: 0 6px 12px var(--box-shadow-color);  /* Add shadow on hover */
+}
+
+.image-gallery-content h3, .image-gallery-content p {
+    animation: fadeInUp 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MAIN */
+
+/* Styles for the header */
+.App-header {
+    background-color: #2c3e50;  /* Updated classy color */
+    padding: 20px;
+    color: #ecf0f1;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the rest of the website */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Example for other sections */
+.section {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.App-header > .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
