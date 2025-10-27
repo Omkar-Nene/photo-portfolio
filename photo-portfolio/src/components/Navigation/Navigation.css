@@ -1,0 +1,158 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navigation.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.dark-mode .navigation.scrolled {
+  background: rgba(26, 26, 26, 0.95);
+  box-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 2px;
+}
+
+.scrolled .nav-logo {
+  color: #0891b2;
+}
+
+.dark-mode .scrolled .nav-logo {
+  color: #fbbf24;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.scrolled .nav-menu li a {
+  color: #333;
+}
+
+.dark-mode .scrolled .nav-menu li a {
+  color: #f8f9fa;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0891b2;
+  transition: width 0.3s ease;
+}
+
+.dark-mode .nav-menu li a::after {
+  background: #fbbf24;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu li a:hover {
+  color: #0891b2;
+}
+
+.dark-mode .nav-menu li a:hover {
+  color: #fbbf24;
+}
+
+.scrolled .nav-menu li a:hover {
+  color: #0891b2;
+}
+
+.dark-mode .scrolled .nav-menu li a:hover {
+  color: #fbbf24;
+}
+
+.dark-mode-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.scrolled .dark-mode-toggle {
+  background: rgba(8, 145, 178, 0.1);
+}
+
+.dark-mode .scrolled .dark-mode-toggle {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  .nav-menu li a {
+    font-size: 0.9rem;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-menu {
+    display: none;
+  }
+}

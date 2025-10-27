@@ -1,0 +1,331 @@
+.gallery-section {
+  padding: 6rem 0;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #333;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+  font-weight: 300;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.back-button {
+  background: #0891b2;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3);
+}
+
+.back-button:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 145, 178, 0.4);
+}
+
+.dark-mode .back-button {
+  background: #fbbf24;
+  color: #1e3a8a;
+}
+
+.dark-mode .back-button:hover {
+  background: #fcd34d;
+}
+
+/* Smart Collage Grid - Sequential fill, gaps at end */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 180px;
+  gap: 15px;
+  grid-auto-flow: row dense; /* Dense packing but respects row order */
+}
+
+/* Different size variations for dynamic collage effect */
+.collage-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Small items - single cell, fills gaps */
+.collage-item-small {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+/* Medium items - taller (portrait) or wider (landscape) */
+.collage-item-medium {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+/* Large items - bigger hero images */
+.collage-item-large {
+  grid-row: span 2;
+  grid-column: span 1;
+}
+
+.collage-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.collage-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.collage-item:hover .collage-image {
+  transform: scale(1.05);
+}
+
+.collage-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.collage-item:hover .collage-overlay {
+  opacity: 1;
+}
+
+/* Masonry Layout - Respects natural image aspect ratios */
+.masonry-grid {
+  display: flex;
+  margin-left: -20px;
+  width: auto;
+}
+
+.masonry-grid-column {
+  padding-left: 20px;
+  background-clip: padding-box;
+}
+
+.masonry-item {
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.masonry-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.masonry-item:hover .masonry-image {
+  transform: scale(1.05);
+}
+
+.masonry-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover .masonry-overlay {
+  opacity: 1;
+}
+
+.image-name {
+  color: white;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0891b2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .spinner {
+  border: 4px solid #333;
+  border-top: 4px solid #fbbf24;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner p {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+/* Dark Mode */
+.dark-mode .gallery-section {
+  background: #1a1a1a;
+}
+
+.dark-mode .section-title {
+  color: #f8f9fa;
+}
+
+.dark-mode .section-subtitle {
+  color: #aaa;
+}
+
+.dark-mode .collage-item,
+.dark-mode .masonry-item {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: #1a1a1a;
+}
+
+.dark-mode .collage-item:hover,
+.dark-mode .masonry-item:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .collage-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: 160px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 4rem 0;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .collage-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 140px;
+    gap: 10px;
+  }
+
+  /* All items same size on tablet for clean rows */
+  .collage-item-small,
+  .collage-item-medium,
+  .collage-item-large {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  .masonry-grid {
+    margin-left: -15px;
+  }
+
+  .masonry-grid-column {
+    padding-left: 15px;
+  }
+
+  .masonry-item {
+    margin-bottom: 15px;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+    gap: 8px;
+  }
+
+  /* All items uniform on mobile - perfect rows */
+  .collage-item-small,
+  .collage-item-medium,
+  .collage-item-large {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+}
