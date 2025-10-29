@@ -32,11 +32,12 @@ export const GALLERY_CONFIG = {
       folderId: '12m3SZ1nShD3GHrWqW2dyYWRfGsJmmNwp',
       description: 'Beautiful scenery and natural vistas',
     },
-    {
-      name: 'Portraits',
-      folderId: '14zCAp_kx73TUQm1Zo4jcBmaPH0ewSehC',
-      description: 'Professional portrait photography',
-    },
+    // Temporarily commented out - will uncomment when client adds real photos
+    // {
+    //   name: 'Portraits',
+    //   folderId: '14zCAp_kx73TUQm1Zo4jcBmaPH0ewSehC',
+    //   description: 'Professional portrait photography',
+    // },
     {
       name: 'Black & White',
       folderId: '1LC9cZEEHTY4NjbgpxyWjDY4GvpwPfQD7',
