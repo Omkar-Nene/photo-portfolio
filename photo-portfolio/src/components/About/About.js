@@ -19,9 +19,11 @@ const About = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="image-placeholder">
-              <span>Your Photo Here</span>
-            </div>
+            <img
+              src="https://lh3.googleusercontent.com/d/1Pn1kN_yHWMUUZ7YJWU4GAgWP-zvSgOrw=s800"
+              alt="Aniruddha Oka"
+              className="profile-photo"
+            />
           </motion.div>
 
           <motion.div
