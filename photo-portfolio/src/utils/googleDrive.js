@@ -23,9 +23,9 @@ export const GALLERY_CONFIG = {
       autoFeatured: true, // Auto-populate from other categories
     },
     {
-      name: 'Candid',
+      name: 'Flora & Fauna',
       folderId: '1sieqlrFxB5BhDqNinC2BRFLw2mW83PtM',
-      description: 'Spontaneous moments captured naturally',
+      description: 'Nature\'s beauty in flowers and wildlife',
     },
     {
       name: 'Landscape',

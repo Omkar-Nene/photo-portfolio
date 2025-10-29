@@ -33,20 +33,25 @@ const About = () => {
             <h2 className="about-title">About Me</h2>
             <div className="about-text">
               <p>
-                Welcome to my photography portfolio. I'm Aniruddha Oka, a passionate
-                photographer dedicated to capturing life's most beautiful moments.
+                Welcome to my photography portfolio.
               </p>
               <p>
-                With an eye for detail and a love for storytelling, I specialize in
-                various photography styles including candid, landscape, portrait, and
-                black & white photography. Each photograph tells a unique story, frozen
-                in time.
+                I'm Aniruddha Oka, a passionate photographer who loves to capture life's most beautiful moments as I witness them.
               </p>
               <p>
-                My goal is to create timeless images that evoke emotion and preserve
-                memories for generations to come. Whether it's the grandeur of nature,
-                the intimacy of a portrait, or the spontaneity of candid moments, I
-                strive to capture the essence of every scene.
+                And this is the very reason that I have been shooting on my iPhone Pro off late, having practiced photography on an SLR with a set of lenses.
+              </p>
+              <p>
+                With an eye for detail and a love for storytelling, I believe I have a collection of various photographs mostly including Natural Landscapes, Skies, Flowers & Fauna, Walking Trails and some interesting images and scenery that fascinated me. Mostly in colour and select few in Monotone – Black & White that is.
+              </p>
+              <p>
+                To me, each photograph tells a story of a unique moment frozen in time that I cherish.
+              </p>
+              <p>
+                And without being selfish, I wish to share the joy of witnessing these moments now with you. Be it grandeur of nature, the play of light & shadow, the spontaneity of candid moments or the interesting shapes & patterns.
+              </p>
+              <p>
+                I hope you do like some of these and if you wish to have some printed or framed, do get in touch with me.
               </p>
             </div>
 
