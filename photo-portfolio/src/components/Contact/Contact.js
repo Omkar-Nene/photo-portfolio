@@ -41,7 +41,7 @@ const Contact = () => {
         >
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">
-            Have a project in mind? Let's work together
+            Interested in getting prints or prints framed? Or wish to collaborate in any way? Lets connect.
           </p>
         </motion.div>
 
@@ -56,7 +56,7 @@ const Contact = () => {
               <div className="info-icon">📧</div>
               <div>
                 <h4>Email</h4>
-                <p>annirudhaoka@gmail.com</p>
+                <p>aniruddhaoka@gmail.com</p>
               </div>
             </div>
 
