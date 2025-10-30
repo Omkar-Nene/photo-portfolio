@@ -13,6 +13,36 @@ const GalleryGrid = ({ onImageClick }) => {
 
   useEffect(() => {
     loadGalleries();
+
+    // Disable right-click on images
+    const handleContextMenu = (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // Disable keyboard shortcuts for saving images
+    const handleKeyDown = (e) => {
+      // Disable Ctrl+S, Cmd+S (Save)
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+      // Disable Ctrl+Shift+S, Cmd+Shift+S (Save As)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   const loadGalleries = async () => {
