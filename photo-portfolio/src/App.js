@@ -54,6 +54,11 @@ function App() {
           onPrevious={handlePreviousImage}
         />
       )}
+
+      {/* Developer credit - subtle */}
+      <div className="developer-credit">
+        Developed by Omkar Nene
+      </div>
     </div>
   );
 }

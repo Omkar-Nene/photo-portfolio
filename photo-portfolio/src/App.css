@@ -137,3 +137,21 @@ body.dark-mode ::-moz-selection {
   background: #fbbf24;
   color: #1e3a8a;
 }
+
+/* Developer credit - very subtle */
+.developer-credit {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.65rem;
+  color: rgba(0, 0, 0, 0.15);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+}
+
+body.dark-mode .developer-credit {
+  color: rgba(255, 255, 255, 0.1);
+}
